@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	font-family: KumbhSans, sans-serif;
+	font-size: 16px;
+	line-height: 2;
+	font-weight: 400;
+	box-sizing: border-box;
+}
+
+@layer base {
+	body {
+		@apply bg-gray-100 text-blue-400 relative text-md m-0 p-0 leading-relaxed;
+	}
+}
+
+@layer components {
+	.container {
+		@apply lg:px-8 sx:px-0 w-full max-w-[1440px] mx-auto;
+	}
+}

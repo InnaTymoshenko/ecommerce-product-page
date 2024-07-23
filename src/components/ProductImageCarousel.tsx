@@ -68,7 +68,7 @@ export function ProductImageCarousel({ images, className, options, ...props }: P
 								<CarouselItem key={i}>
 									<div
 										className={cn(
-											'w-full relative cursor-pointer  aspect-square min-w-full h-auto lg:max-h-[65vh] sx:max-h-[55vh] lg:rounded-2xl sx:rounded-none overflow-hidden'
+											'w-full relative cursor-pointer  aspect-square min-w-full h-auto lg:rounded-2xl sx:rounded-none overflow-hidden'
 										)}
 										onClick={() => setIsModal(!isModal)}
 									>

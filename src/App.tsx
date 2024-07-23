@@ -9,6 +9,7 @@ import { Close } from './components/icons/Close'
 import CartComponent from './components/CartComponent'
 import './index.css'
 import { useProduct } from './store/store'
+import { Button } from './components/ui/Button'
 
 function App() {
 	const [isCart, setIsCart] = useState(false)
@@ -18,28 +19,31 @@ function App() {
 	return (
 		<React.Fragment>
 			<header>
-				<Shell className="container lg:h-[8rem] sx:h-[5rem] sx:px-8">
+				<Shell className="container lg:h-[7rem] sx:h-[5rem] sx:px-8">
 					<div className="w-full h-full flex gap-6 justify-between items-center  lg:border-b-2  ">
 						<div className="flex gap-4 items-center">
-							<div className="lg:hidden sx:block cursor-pointer">
+							<Button variant={'ghost'} size={'small'} className="lg:hidden sx:block cursor-pointer">
 								<Menu onClick={() => setIsOpen(!isOpen)} />
-							</div>
+							</Button>
 							<NavLink to={'/'}>
 								<img src={logo} alt="logo" />
 							</NavLink>
 						</div>
-
 						<nav
 							className={`w-[70%] h-full lg:flex ${
 								isOpen
-									? 'flex flex-col gap-8 items-start p-8 w-[60%] absolute top-0 left-[-1rem] h-[100vh] z-50 bg-gray-100 overscroll-none'
+									? 'flex flex-col gap-8 items-start p-8 w-[55%] absolute top-0 left-[-1rem] h-[100vh] z-50 bg-gray-100 overscroll-none'
 									: 'hidden  items-center'
 							}`}
 						>
-							{isOpen && <Close className="cursor-pointer ml-2" onClick={() => setIsOpen(!isOpen)} />}
+							{isOpen && (
+								<Button variant={'ghost'} size={'small'} onClick={() => setIsOpen(!isOpen)}>
+									<Close />
+								</Button>
+							)}
 
 							<ul
-								className={`h-full flex justify-start text-xl ${
+								className={`h-full flex justify-start text-lg ${
 									isOpen ? 'flex-col items-start w-full gap-4' : ' items-center  gap-8  '
 								}`}
 							>
@@ -139,6 +143,7 @@ function App() {
 			</header>
 			<div
 				className={`${isOpen ? 'absolute h-full top-0 left-0 right-0 bg-blue-500/80 z-10 overscroll-none' : 'hidden'}`}
+				onClick={() => setIsOpen(false)}
 			></div>
 			<Outlet />
 		</React.Fragment>

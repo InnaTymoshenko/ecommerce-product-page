@@ -15,18 +15,22 @@ const InfoProduct = () => {
 	}
 
 	return (
-		<div className="lg:w-[50%] sx:w-full lg:py-16 lg:pr-24 flex flex-col items-start justify-between lg:gap-4 sx:gap-8 sx:px-12 lg:pl-2 sx:pb-16">
+		<div className="lg:w-[50%] sx:w-full lg:pt-12 lg:pb-28 lg:pr-24 flex flex-col items-start justify-between lg:gap-4 sx:gap-8 sx:px-12 lg:pl-2 sx:pb-16">
 			<span className="text-lg tracking-[0.2em] font-bold uppercase">Sneaker Company</span>
-			<h1 className="text-blue-500 text-5xl font-bold lg:mb-8 sx:mb-2">{product.title}</h1>
-			<p className="text-lg leading-relaxed lg:tracking-widest sx:tracking-[0.15em] font-semibold">
+			<h1 className="text-blue-500 xl:text-5xl md:text-4xl sx:text-5xl font-bold sx:mb-2">{product.title}</h1>
+			<p className="xl:text-lg md:text-md sx:text-lg leading-relaxed lg:tracking-widest sx:tracking-[0.15em] font-semibold">
 				{product.description}
 			</p>
 			<div className="sx:w-full flex lg:flex-col sx:flex-row justify-between lg:items-start sx:items-center gap-4">
 				<div className="flex gap-8">
-					<span className="text-blue-500 text-4xl font-bold">{`$${product.lowPrice?.toFixed(2)}`}</span>
+					<span className="text-blue-500 xl:text-4xl md:text-3xl sx:text-4xl font-bold">{`$${product.lowPrice?.toFixed(
+						2
+					)}`}</span>
 					<span className="text-white text-lg font-bold px-2 py-1 mt-2 bg-blue-500 rounded-lg">{`${product.discount}%`}</span>
 				</div>
-				<span className="text-xl font-bold line-through">{`$${product.price.toFixed(2)}`}</span>
+				<span className="xl:text-xl md:text-lg sx:text-xl font-bold line-through">{`$${product.price.toFixed(
+					2
+				)}`}</span>
 			</div>
 			<div className="w-full flex xl:flex-row sx:flex-col gap-4  justify-between mt-4">
 				<div className="bg-gray-200 rounded-lg flex justify-between items-center px-4 py-4 gap-8 lg:text-lg sx:text-xl text-blue-500 font-bold">

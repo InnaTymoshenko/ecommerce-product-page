@@ -8,6 +8,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Star } from './icons/Star'
 import { Close } from './icons/Close'
 import { Image } from '../types/type'
+import { Button } from './ui/Button'
 
 interface ProductImageCarouselProps extends React.HTMLAttributes<HTMLDivElement> {
 	images: Image[]
@@ -65,7 +66,15 @@ export function ImagePopupCarousel({
 		<>
 			<div className="w-full absolute h-full bg-black/70 top-0 left-0 z-10 flex flex-col justify-center items-center">
 				<div className="lg:w-[50%] sx:w-full h-[80%] flex flex-col gap-4 p-4 items-end">
-					<Close className="hover:text-orange-200 cursor-pointer" onClick={() => setIsModal(!isModal)} />
+					<Button
+						className="hover:text-orange-200 cursor-pointer"
+						variant={'ghost'}
+						size={'small'}
+						onClick={() => setIsModal(!isModal)}
+					>
+						<Close />
+					</Button>
+
 					<div className={cn('flex flex-col gap-12 w-full h-full', className)} {...props}>
 						<Carousel
 							setApi={setApi}

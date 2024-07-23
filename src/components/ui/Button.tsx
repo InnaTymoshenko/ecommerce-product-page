@@ -22,7 +22,7 @@ const buttonStyles = cva(
 		variants: {
 			variant: {
 				primary: 'bg-gray-200 text-blue-500 hover:bg-button-primary-hover active:bg-button-primary-active',
-				ghost: 'bg-button-ghost text-primary hover:bg-button-ghost-hover active:bg-button-ghost-active border',
+				ghost: 'bg-transparent text-primary  ',
 				accent: 'bg-orange-200  text-blue-500 hover:bg-orange-200/70 active:bg-orange-200/40'
 			},
 			error: {
@@ -35,8 +35,8 @@ const buttonStyles = cva(
 				between: 'justify-between'
 			},
 			size: {
-				small: 'px-3 gap-2 text-sm h-8',
-				medium: 'px-4 py-4 gap-16 text-lg font-bold',
+				small: 'p-3 gap-2 text-sm h-8',
+				medium: 'p-4 gap-16 text-lg font-bold',
 				large: 'sx:px-20 lg:px-12 2xl:px-20 py-2 gap-4 text-lg font-bold h-16',
 				'icon-small': 'h-8 w-8',
 				'icon-medium': 'h-10 w-10',

@@ -64,17 +64,14 @@ export function ImagePopupCarousel({
 
 	return (
 		<>
-			<div className="w-full absolute h-full bg-black/70 top-0 left-0 z-10 flex flex-col justify-center items-center">
+			<div
+				className="w-full absolute h-full bg-black/70 top-0 left-0 z-10 flex flex-col justify-center items-center"
+				onClick={() => setIsModal(!isModal)}
+			>
 				<div className="lg:w-[50%] sx:w-full h-[80%] flex flex-col gap-4 p-4 items-end">
-					<Button
-						className="hover:text-orange-200 cursor-pointer"
-						variant={'ghost'}
-						size={'small'}
-						onClick={() => setIsModal(!isModal)}
-					>
-						<Close />
+					<Button className=" cursor-pointer" variant={'ghost'} size={'small'} onClick={() => setIsModal(!isModal)}>
+						<Close className="text-white hover:text-orange-200" />
 					</Button>
-
 					<div className={cn('flex flex-col gap-12 w-full h-full', className)} {...props}>
 						<Carousel
 							setApi={setApi}
